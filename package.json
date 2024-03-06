@@ -1,12 +1,14 @@
 {
   "name": "qa-auto-5",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cypress qa-auto repo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:record": "cypress run --record --key 28f53366-c987-4291-9b5b-7807302d5775"
   },
-  "author": "",
+  "author": "Konstantin K.",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.6.6"
