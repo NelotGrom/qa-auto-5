@@ -6,7 +6,9 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:record": "cypress run --record --key 28f53366-c987-4291-9b5b-7807302d5775"
+    "cy:record": "cypress run --record --key 28f53366-c987-4291-9b5b-7807302d5775",
+    "cy:run_st": "cypress run --config-file cypress.config-stage.js",
+    "cy:record_st": "cypress run --config-file cypress.config-stage.js --record --key 28f53366-c987-4291-9b5b-7807302d5775"
   },
   "author": "Konstantin K.",
   "license": "ISC",

@@ -13,7 +13,7 @@ describe("Check the nav links with student creds", () => {
     cy.get(".brand-title").contains("Sqlverifier").click();
     cy.url().should(
       "eq",
-      "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/?page=1&sort=id,asc"
+      Cypress.config().baseUrl + "?page=1&sort=id,asc"
     );
   });
 
@@ -24,7 +24,7 @@ describe("Check the nav links with student creds", () => {
       .click();
     cy.url().should(
       "eq",
-      "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/?page=1&sort=id,asc"
+      Cypress.config().baseUrl + "?page=1&sort=id,asc"
     );
   });
 
@@ -35,7 +35,7 @@ describe("Check the nav links with student creds", () => {
     cy.get('[href="/task"] > span').click();
     cy.url().should(
       "eq",
-      "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/task?page=1&sort=id,asc"
+      Cypress.config().baseUrl + "task?page=1&sort=id,asc"
     );
   });
 
@@ -46,7 +46,7 @@ describe("Check the nav links with student creds", () => {
     cy.get('[href="/user-task"] > span').click();
     cy.url().should(
       "eq",
-      "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/user-task"
+      Cypress.config().baseUrl + "user-task"
     );
   });
 
@@ -57,7 +57,7 @@ describe("Check the nav links with student creds", () => {
     cy.get('[data-cy="docsMenu"] > .dropdown-menu > .dropdown-item').click();
     cy.url().should(
       "eq",
-      "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/docs/docs"
+      Cypress.config().baseUrl + "docs/docs"
     );
   });
 
@@ -125,7 +125,7 @@ describe("Check the nav links with student creds", () => {
     cy.get('[data-cy="settings"]').click();
     cy.url().should(
       "eq",
-      "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/account/settings"
+      Cypress.config().baseUrl + "account/settings"
     );
   });
 
@@ -136,7 +136,7 @@ describe("Check the nav links with student creds", () => {
     cy.get('[data-cy="passwordItem"]').click();
     cy.url().should(
       "eq",
-      "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/account/password"
+      Cypress.config().baseUrl + "account/password"
     );
   });
 
@@ -147,7 +147,7 @@ describe("Check the nav links with student creds", () => {
     cy.get('[data-cy="logout"]').click();
     cy.url().should(
       "eq",
-      "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/logout"
+      Cypress.config().baseUrl + "logout"
     );
   });
 });
