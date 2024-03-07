@@ -1,6 +1,6 @@
 describe('sql verifyer spec', () => {
   beforeEach(() => {
-    cy.visit('https://sqlverifier-live-6e21ca0ed768.herokuapp.com/')
+    cy.visit('/')
   })
 
   it('User can visit the main page',() => {
