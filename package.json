@@ -8,7 +8,11 @@
     "cy:run": "cypress run",
     "cy:record": "cypress run --record --key 28f53366-c987-4291-9b5b-7807302d5775",
     "cy:run_st": "cypress run --config-file cypress.config-stage.js",
-    "cy:record_st": "cypress run --config-file cypress.config-stage.js --record --key 28f53366-c987-4291-9b5b-7807302d5775"
+    "cy:record_st": "cypress run --config-file cypress.config-stage.js --record --key 28f53366-c987-4291-9b5b-7807302d5775",
+    "cy:chrome": "cypress run --browser chrome",
+    "cy:electron": "cypress run --browser electron",
+    "cy:c-e": "npm run cy:chrome && npm run cy:electron",
+    "cy:c-e-record": "npm run cy:chrome --record --key 28f53366-c987-4291-9b5b-7807302d5775 && npm run cy:electron --record --key 28f53366-c987-4291-9b5b-7807302d5775"
   },
   "author": "Konstantin K.",
   "license": "ISC",

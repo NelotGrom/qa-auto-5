@@ -11,10 +11,7 @@ describe("Check the nav links with student creds", () => {
   it('Verify "Logo" nav link in header', () => {
     cy.visit("/user-task");
     cy.get(".brand-title").contains("Sqlverifier").click();
-    cy.url().should(
-      "eq",
-      Cypress.config().baseUrl + "?page=1&sort=id,asc"
-    );
+    cy.url().should("eq", Cypress.config().baseUrl + "?page=1&sort=id,asc");
   });
 
   it('Verify "Home" nav link in header', () => {
@@ -22,10 +19,7 @@ describe("Check the nav links with student creds", () => {
     cy.get("#header-tabs > li:nth-child(1) > a > span > span")
       .should("have.text", "Home")
       .click();
-    cy.url().should(
-      "eq",
-      Cypress.config().baseUrl + "?page=1&sort=id,asc"
-    );
+    cy.url().should("eq", Cypress.config().baseUrl + "?page=1&sort=id,asc");
   });
 
   it('Verify "Entities->Task" nav link in header', () => {
@@ -33,10 +27,7 @@ describe("Check the nav links with student creds", () => {
       .should("have.text", "Entities")
       .click();
     cy.get('[href="/task"] > span').click();
-    cy.url().should(
-      "eq",
-      Cypress.config().baseUrl + "task?page=1&sort=id,asc"
-    );
+    cy.url().should("eq", Cypress.config().baseUrl + "task?page=1&sort=id,asc");
   });
 
   it('Verify "Entities->User Task" nav link in header', () => {
@@ -44,10 +35,7 @@ describe("Check the nav links with student creds", () => {
       .should("have.text", "Entities")
       .click();
     cy.get('[href="/user-task"] > span').click();
-    cy.url().should(
-      "eq",
-      Cypress.config().baseUrl + "user-task"
-    );
+    cy.url().should("eq", Cypress.config().baseUrl + "user-task");
   });
 
   it('Verify "Swagger->API" nav link in header', () => {
@@ -55,10 +43,7 @@ describe("Check the nav links with student creds", () => {
       .should("have.text", "Swagger")
       .click();
     cy.get('[data-cy="docsMenu"] > .dropdown-menu > .dropdown-item').click();
-    cy.url().should(
-      "eq",
-      Cypress.config().baseUrl + "docs/docs"
-    );
+    cy.url().should("eq", Cypress.config().baseUrl + "docs/docs");
   });
 
   it('Verify "Français" nav link in header swithces a lang', () => {
@@ -103,12 +88,23 @@ describe("Check the nav links with student creds", () => {
     cy.get(":nth-child(5) > .d-flex > span").should("have.text", "Профіль");
   });
 
+  // it('ORIGINAL Verify "English" nav link in header swithces a lang', () => {
+  //   cy.get(":nth-child(4) > .d-flex > span").click();
+  //   cy.get('[value="ru"]').click();
+  //   cy.get(":nth-child(4) > .d-flex > span").click();
+  //   cy.get('[value="en"]').click();
+  //   cy.get(":nth-child(4) > .d-flex > span").should("have.text", "English");
+  //   cy.get("#header-tabs > li:nth-child(1) > a > span > span").should(
+  //     "have.text",
+  //     "Home"
+  //   );
+  //   cy.get('[data-cy="entity"] > .d-flex').should("have.text", "Entities");
+  //   cy.get(":nth-child(5) > .d-flex > span").should("have.text", "Account");
+  // });
+
   it('Verify "English" nav link in header swithces a lang', () => {
     cy.get(":nth-child(4) > .d-flex > span").click();
-    cy.get('[value="ru"]').click();
-    cy.get(":nth-child(4) > .d-flex > span").click();
     cy.get('[value="en"]').click();
-
     cy.get(":nth-child(4) > .d-flex > span").should("have.text", "English");
     cy.get("#header-tabs > li:nth-child(1) > a > span > span").should(
       "have.text",
@@ -123,10 +119,7 @@ describe("Check the nav links with student creds", () => {
       .should("have.text", "Account")
       .click();
     cy.get('[data-cy="settings"]').click();
-    cy.url().should(
-      "eq",
-      Cypress.config().baseUrl + "account/settings"
-    );
+    cy.url().should("eq", Cypress.config().baseUrl + "account/settings");
   });
 
   it('Verify "Account->Password" nav link in header', () => {
@@ -134,10 +127,7 @@ describe("Check the nav links with student creds", () => {
       .should("have.text", "Account")
       .click();
     cy.get('[data-cy="passwordItem"]').click();
-    cy.url().should(
-      "eq",
-      Cypress.config().baseUrl + "account/password"
-    );
+    cy.url().should("eq", Cypress.config().baseUrl + "account/password");
   });
 
   it('Verify "Account->Sign out" nav link in header', () => {
@@ -145,9 +135,6 @@ describe("Check the nav links with student creds", () => {
       .should("have.text", "Account")
       .click();
     cy.get('[data-cy="logout"]').click();
-    cy.url().should(
-      "eq",
-      Cypress.config().baseUrl + "logout"
-    );
+    cy.url().should("eq", Cypress.config().baseUrl + "logout");
   });
 });
