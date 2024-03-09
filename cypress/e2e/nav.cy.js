@@ -47,71 +47,27 @@ describe("Check the nav links with student creds", () => {
   });
 
   it('Verify "Français" nav link in header swithces a lang', () => {
-    cy.get(":nth-child(4) > .d-flex > span")
-      .should("have.text", "English")
-      .click();
+    cy.checkText(":nth-child(4) > .d-flex > span","English").click();
     cy.get('[value="fr"]').click();
-    cy.get(":nth-child(4) > .d-flex > span").should("have.text", "Français");
-    cy.get("#header-tabs > li:nth-child(1) > a > span > span").should(
-      "have.text",
-      "Accueil"
-    );
-    cy.get('[data-cy="entity"] > .d-flex').should("have.text", "Entités");
-    cy.get(":nth-child(5) > .d-flex > span").should("have.text", "Compte");
+    cy.langChangeCheck('Français', 'Accueil', 'Entités', 'Compte');
   });
 
   it('Verify "Русский" nav link in header swithces a lang', () => {
-    cy.get(":nth-child(4) > .d-flex > span")
-      .should("have.text", "English")
-      .click();
+    cy.checkText(":nth-child(4) > .d-flex > span","English").click();
     cy.get('[value="ru"]').click();
-    cy.get(":nth-child(4) > .d-flex > span").should("have.text", "Русский");
-    cy.get("#header-tabs > li:nth-child(1) > a > span > span").should(
-      "have.text",
-      "Главная"
-    );
-    cy.get('[data-cy="entity"] > .d-flex').should("have.text", "Сущности");
-    cy.get(":nth-child(5) > .d-flex > span").should("have.text", "Профиль");
-  });
+    cy.langChangeCheck('Русский', 'Главная', 'Сущности', 'Профиль');
+  }); 
 
   it('Verify "Українська" nav link in header swithces a lang', () => {
-    cy.get(":nth-child(4) > .d-flex > span")
-      .should("have.text", "English")
-      .click();
+    cy.checkText(":nth-child(4) > .d-flex > span","English").click();
     cy.get('[value="ua"]').click();
-    cy.get(":nth-child(4) > .d-flex > span").should("have.text", "Українська");
-    cy.get("#header-tabs > li:nth-child(1) > a > span > span").should(
-      "have.text",
-      "Головна"
-    );
-    cy.get('[data-cy="entity"] > .d-flex').should("have.text", "Сутності");
-    cy.get(":nth-child(5) > .d-flex > span").should("have.text", "Профіль");
+    cy.langChangeCheck('Українська', 'Головна', 'Сутності', 'Профіль');
   });
-
-  // it('ORIGINAL Verify "English" nav link in header swithces a lang', () => {
-  //   cy.get(":nth-child(4) > .d-flex > span").click();
-  //   cy.get('[value="ru"]').click();
-  //   cy.get(":nth-child(4) > .d-flex > span").click();
-  //   cy.get('[value="en"]').click();
-  //   cy.get(":nth-child(4) > .d-flex > span").should("have.text", "English");
-  //   cy.get("#header-tabs > li:nth-child(1) > a > span > span").should(
-  //     "have.text",
-  //     "Home"
-  //   );
-  //   cy.get('[data-cy="entity"] > .d-flex').should("have.text", "Entities");
-  //   cy.get(":nth-child(5) > .d-flex > span").should("have.text", "Account");
-  // });
 
   it('Verify "English" nav link in header swithces a lang', () => {
     cy.get(":nth-child(4) > .d-flex > span").click();
     cy.get('[value="en"]').click();
-    cy.get(":nth-child(4) > .d-flex > span").should("have.text", "English");
-    cy.get("#header-tabs > li:nth-child(1) > a > span > span").should(
-      "have.text",
-      "Home"
-    );
-    cy.get('[data-cy="entity"] > .d-flex').should("have.text", "Entities");
-    cy.get(":nth-child(5) > .d-flex > span").should("have.text", "Account");
+    cy.langChangeCheck('English', 'Home', 'Entities', 'Account');
   });
 
   it('Verify "Account->Settings" nav link in header', () => {
@@ -131,6 +87,7 @@ describe("Check the nav links with student creds", () => {
   });
 
   it('Verify "Account->Sign out" nav link in header', () => {
+    
     cy.get(":nth-child(5) > .d-flex > span")
       .should("have.text", "Account")
       .click();
@@ -138,3 +95,17 @@ describe("Check the nav links with student creds", () => {
     cy.url().should("eq", Cypress.config().baseUrl + "logout");
   });
 });
+
+// it('ORIGINAL Verify "English" nav link in header swithces a lang', () => {
+  //   cy.get(":nth-child(4) > .d-flex > span").click();
+  //   cy.get('[value="ru"]').click();
+  //   cy.get(":nth-child(4) > .d-flex > span").click();
+  //   cy.get('[value="en"]').click();
+  //   cy.get(":nth-child(4) > .d-flex > span").should("have.text", "English");
+  //   cy.get("#header-tabs > li:nth-child(1) > a > span > span").should(
+  //     "have.text",
+  //     "Home"
+  //   );
+  //   cy.get('[data-cy="entity"] > .d-flex').should("have.text", "Entities");
+  //   cy.get(":nth-child(5) > .d-flex > span").should("have.text", "Account");
+  // });
