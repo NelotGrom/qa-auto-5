@@ -1,11 +1,11 @@
 describe("Check the nav links with student creds", () => {
   beforeEach("Login with student creds", () => {
-    cy.visit("/"),
-      cy.get("#account-menu > a > span").click(),
-      cy.get("#login-item").click(),
-      cy.get("#username").type("kosStudent"),
-      cy.get("#password").type("12345"),
-      cy.get('[data-cy="submit"]').click();
+    cy.visit("/");
+    cy.get("#account-menu > a > span").click();
+    cy.get("#login-item").click();
+    cy.get("#username").type("kosStudent");
+    cy.get("#password").type("12345");
+    cy.get('[data-cy="submit"]').click();
   });
 
   it('Verify "Logo" nav link in header', () => {
@@ -86,8 +86,7 @@ describe("Check the nav links with student creds", () => {
     cy.url().should("eq", Cypress.config().baseUrl + "account/password");
   });
 
-  it('Verify "Account->Sign out" nav link in header', () => {
-    
+  it('Verify "Account->Sign out" nav link in header', () => {    
     cy.get(":nth-child(5) > .d-flex > span")
       .should("have.text", "Account")
       .click();
