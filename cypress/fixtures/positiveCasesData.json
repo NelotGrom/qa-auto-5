@@ -1,0 +1,36 @@
+[
+  { "login": "user", "email": "konstantingdansk@gmail.com", "password": "1234" },
+  { "login": "new_user", "email": "konstantingdansk@secret.gmail.com", "password": "abcd" },
+  { "login": "new_user_test", "email": "konstantin.gdansk@gmail.com", "password": "пароль" },
+  {
+    "login": "new-user",
+    "email": "konstantin.gdansk@gmail.com",
+    "password": "01234567890123456789012345678901234567890123456789"
+  },
+  {
+    "login": "new1234user",
+    "email": "konstantin.gdansk@true-gmail.com",
+    "password": "♣♂” , “”‘~!@#$%^&*()?>,./\\<][ /*<!–“”, “$"
+  },
+  { "login": "new@user", "email": "konstantin.gdansk@gmail123.com", "password": "AbCd" },
+  {
+    "login": "01234567890123456789012345678901234567890123456789",
+    "email": "konstantin.gdansk@gmail.com",
+    "password": "strange password"
+  },
+  {
+    "login": "User",
+    "email": "konstantin.gdansk@gmail.com",
+    "password": "More Difficult Text with spAces."
+  },
+  {
+    "login": "UserBigLetters",
+    "email": "KONSTANTIN.GDANSK@gmail.com",
+    "password": "spaces before_in -and- after"
+  },
+  {
+    "login": "ONLYBIGLETTERS",
+    "email": "konstantin.gdansk@gmail.com",
+    "password": "TeStP@s юsw0rd123!@#$%^&*()_+-=?<>,."
+  }
+]

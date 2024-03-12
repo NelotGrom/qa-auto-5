@@ -33,3 +33,18 @@ Cypress.Commands.add('langChangeCheck', (langName, homeName, entityName, profile
     cy.checkText('[data-cy="entity"] > .d-flex',`${entityName}`);
     cy.checkText(":nth-child(5) > .d-flex > span",`${profileName}`);
 })
+
+Cypress.Commands.add('inputText', (selector, text) => {
+    cy.get(selector).click().type(`${text}{enter}`);
+})
+
+Cypress.Commands.add('verifyInput', (selector) => {
+    cy.get(selector);
+    cy.should('have.class','is-touched is-dirty is-valid form-control');
+})
+
+
+Cypress.Commands.add('cleanInputField', (selector) => {
+    cy.get(selector).type('{selectall}{del}');
+})
+
