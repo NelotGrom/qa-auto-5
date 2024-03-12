@@ -1,28 +1,3 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add('checkText', (selector, text) => {
     cy.get(selector).should("have.text", `${text}`);
 })
@@ -35,16 +10,19 @@ Cypress.Commands.add('langChangeCheck', (langName, homeName, entityName, profile
 })
 
 Cypress.Commands.add('inputText', (selector, text) => {
-    cy.get(selector).click().type(`${text}{enter}`);
+    cy.get(selector).click().type(`${text}`).blur();
 })
 
 Cypress.Commands.add('verifyInput', (selector) => {
     cy.get(selector);
-    cy.should('have.class','is-touched is-dirty is-valid form-control');
+    cy.should('have.class','is-valid form-control');
 })
-
 
 Cypress.Commands.add('cleanInputField', (selector) => {
     cy.get(selector).type('{selectall}{del}');
 })
 
+Cypress.Commands.add('verifyIncorrectInput', (selector) => {
+    cy.get(selector);
+    cy.should('have.class','is-invalid form-control');
+})

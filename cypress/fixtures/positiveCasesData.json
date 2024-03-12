@@ -1,7 +1,19 @@
 [
-  { "login": "user", "email": "konstantingdansk@gmail.com", "password": "1234" },
-  { "login": "new_user", "email": "konstantingdansk@secret.gmail.com", "password": "abcd" },
-  { "login": "new_user_test", "email": "konstantin.gdansk@gmail.com", "password": "пароль" },
+  {
+    "login": "user",
+    "email": "konstantingdansk@gmail.com",
+    "password": "1234"
+  },
+  {
+    "login": "new_user",
+    "email": "konstantingdansk@secret.gmail.com",
+    "password": "abcd"
+  },
+  {
+    "login": "new_user_test",
+    "email": "konstantin.gdansk@gmail.com",
+    "password": "пароль"
+  },
   {
     "login": "new-user",
     "email": "konstantin.gdansk@gmail.com",
@@ -12,7 +24,11 @@
     "email": "konstantin.gdansk@true-gmail.com",
     "password": "♣♂” , “”‘~!@#$%^&*()?>,./\\<][ /*<!–“”, “$"
   },
-  { "login": "new@user", "email": "konstantin.gdansk@gmail123.com", "password": "AbCd" },
+  {
+    "login": "new@user",
+    "email": "konstantin.gdansk@gmail123.com",
+    "password": "AbCd"
+  },
   {
     "login": "01234567890123456789012345678901234567890123456789",
     "email": "konstantin.gdansk@gmail.com",
