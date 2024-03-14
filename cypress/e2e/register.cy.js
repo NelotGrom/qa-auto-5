@@ -1,11 +1,6 @@
 const testData = require("../fixtures/positiveCasesData.json");
 const negativeTestData = require("../fixtures/negativeСasesData.json");
-
-const userField = '[data-cy="username"]';
-const emailField = "#email";
-const firstPassField = '[data-cy="firstPassword"]';
-const secondPassField = '[data-cy="secondPassword"]';
-const submitButton = '[data-cy="submit"]';
+const registerPageSelectors = require("../fixtures/pages/registerPageSelectors.json");
 
 describe("Verify registration inputs", () => {
   beforeEach("Go to register page", () => {
@@ -16,63 +11,63 @@ describe("Verify registration inputs", () => {
 
   it("Check a valid formats of registration", () => {
     testData.forEach((item) => {
-      cy.inputText(userField, item.login);
-      cy.verifyInput(userField);
-      cy.inputText(emailField, item.email);
-      cy.verifyInput(emailField);
-      cy.inputText(firstPassField, item.password);
-      cy.verifyInput(firstPassField);
-      cy.inputText(secondPassField, item.password)
-      cy.verifyInput(secondPassField);
+      cy.inputText(registerPageSelectors.userField, item.login);
+      cy.verifyInput(registerPageSelectors.userField);
+      cy.inputText(registerPageSelectors.emailField, item.email);
+      cy.verifyInput(registerPageSelectors.emailField);
+      cy.inputText(registerPageSelectors.firstPassField, item.password);
+      cy.verifyInput(registerPageSelectors.firstPassField);
+      cy.inputText(registerPageSelectors.secondPassField, item.password)
+      cy.verifyInput(registerPageSelectors.secondPassField);
 
-      cy.cleanInputField(userField);
-      cy.cleanInputField(emailField);
-      cy.cleanInputField(firstPassField);
-      cy.cleanInputField(secondPassField);
+      cy.cleanInputField(registerPageSelectors.userField);
+      cy.cleanInputField(registerPageSelectors.emailField);
+      cy.cleanInputField(registerPageSelectors.firstPassField);
+      cy.cleanInputField(registerPageSelectors.secondPassField);
     });
   });
 
   it("Check a login negative cases", () => {
-    cy.inputText(emailField,'test@com.com');
-    cy.inputText(firstPassField,'1234');
-    cy.inputText(secondPassField,'1234');
+    cy.inputText(registerPageSelectors.emailField,'test@com.com');
+    cy.inputText(registerPageSelectors.firstPassField,'1234');
+    cy.inputText(registerPageSelectors.secondPassField,'1234');
     negativeTestData.login.forEach((item) => {
-      cy.inputText(userField, item)
-      cy.verifyIncorrectInput(userField);
-      cy.cleanInputField(userField);
+      cy.inputText(registerPageSelectors.userField, item)
+      cy.verifyIncorrectInput(registerPageSelectors.userField);
+      cy.cleanInputField(registerPageSelectors.userField);
     })
   })
 
   it("Check a email negative cases", () => {
-    cy.inputText(userField,'test');
-    cy.inputText(firstPassField,'1234');
-    cy.inputText(secondPassField,'1234');
+    cy.inputText(registerPageSelectors.userField,'test');
+    cy.inputText(registerPageSelectors.firstPassField,'1234');
+    cy.inputText(registerPageSelectors.secondPassField,'1234');
     negativeTestData.email.forEach((item) => {
-      cy.inputText(emailField, item)
-      cy.verifyIncorrectInput(emailField);
-      cy.cleanInputField(emailField);
+      cy.inputText(registerPageSelectors.emailField, item)
+      cy.verifyIncorrectInput(registerPageSelectors.emailField);
+      cy.cleanInputField(registerPageSelectors.emailField);
     })
   })
 
   it("Check the 1st password negative cases", () => {
-    cy.inputText(userField,'test');
-    cy.inputText(emailField,'test@test.com');
-    cy.inputText(secondPassField,'1234');
+    cy.inputText(registerPageSelectors.userField,'test');
+    cy.inputText(registerPageSelectors.emailField,'test@test.com');
+    cy.inputText(registerPageSelectors.secondPassField,'1234');
     negativeTestData.password.forEach((item) => {
-      cy.inputText(firstPassField, item);
-      cy.verifyIncorrectInput(firstPassField);
-      cy.cleanInputField(firstPassField);
+      cy.inputText(registerPageSelectors.firstPassField, item);
+      cy.verifyIncorrectInput(registerPageSelectors.firstPassField);
+      cy.cleanInputField(registerPageSelectors.firstPassField);
     })
   })
 
   it("Check the 2st password negative cases", () => {
-    cy.inputText(userField,'test');
-    cy.inputText(emailField,'test@test.com');
-    cy.inputText(firstPassField,'1234');
+    cy.inputText(registerPageSelectors.userField,'test');
+    cy.inputText(registerPageSelectors.emailField,'test@test.com');
+    cy.inputText(registerPageSelectors.firstPassField,'1234');
     negativeTestData.password.forEach((item) => {
-      cy.inputText(secondPassField, item);
-      cy.verifyIncorrectInput(secondPassField);
-      cy.cleanInputField(secondPassField);
+      cy.inputText(registerPageSelectors.secondPassField, item);
+      cy.verifyIncorrectInput(registerPageSelectors.secondPassField);
+      cy.cleanInputField(registerPageSelectors.secondPassField);
     })
   })
 

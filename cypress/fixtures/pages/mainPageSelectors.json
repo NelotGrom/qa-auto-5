@@ -1,0 +1,6 @@
+{
+    "accounMenu": "[data-cy='accountMenu']",
+    "loginButton": "[data-cy='login']",
+    "logOutButton": "[data-cy='logout']",
+    "passwordButton": "[data-cy='passwordItem']"
+}
