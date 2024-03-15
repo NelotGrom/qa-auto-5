@@ -26,8 +26,3 @@ Cypress.Commands.add('verifyIncorrectInput', (selector) => {
     cy.get(selector);
     cy.should('have.class','is-invalid form-control');
 })
-
-// Cypress.Commands.add('signinFromMainPage', () => {
-//     cy.get(selector);
-//     cy.should('have.class','is-invalid form-control');
-// })

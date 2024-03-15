@@ -3,9 +3,6 @@ const negativeTestData = require("../fixtures/negativeSiginData.json");
 const loginPageSelectors = require("../fixtures/pages/loginPageSelectors.json");
 const mainPageSelectors = require("../fixtures/pages/mainPageSelectors.json")
 
-// const loginPageSelectors.usernameField = '[data-cy="username"]';
-// const loginPageSelectors.passwordField = "#password";
-
 describe("Verify Sign-in form inputs", () => {
   beforeEach("Go to sign in modal", () => {
     cy.visit("/");
