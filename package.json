@@ -6,13 +6,14 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:record": "cypress run --record --key 28f53366-c987-4291-9b5b-7807302d5775",
-    "cy:run_st": "cypress run --config-file cypress.config-stage.js",
-    "cy:record_st": "cypress run --config-file cypress.config-stage.js --record --key 28f53366-c987-4291-9b5b-7807302d5775",
-    "cy:chrome": "cypress run --browser chrome",
-    "cy:electron": "cypress run --browser electron",
-    "cy:c-e": "npm run cy:chrome && npm run cy:electron",
-    "cy:c-e-record": "npm run cy:chrome --record --key 28f53366-c987-4291-9b5b-7807302d5775 && npm run cy:electron --record --key 28f53366-c987-4291-9b5b-7807302d5775"
+    "cy:run:cloud": "npm cypress run --record --key 28f53366-c987-4291-9b5b-7807302d5775",
+    "cy:run:first": "cypress run --config-file cypress-13inch-laptop.config.js --spec 'cypress/e2e/UI-1/*.js'",
+    "cy:run:second": "cypress run --config-file cypress-24inch-desktop.config.js --spec 'cypress/e2e/UI-2/*.js'",
+    "cy:first": "cypress run --config-file cypress-13inch-laptop.config.js --browser chrome --spec 'cypress/e2e/UI-1/*.js' --record --key 28f53366-c987-4291-9b5b-7807302d5775",
+    "cy:second": "cypress run --config-file cypress-24inch-desktop.config.js --browser electron --spec 'cypress/e2e/UI-2/*.js' --record --key 28f53366-c987-4291-9b5b-7807302d5775",
+    "cy:run:all": "npm run cy:run:first & npm run cy:run:second",
+    "cy:run:rec:all": "npm run cy:first & npm run cy:second",
+    "cy:parallel": "npm run cy:first -- --group Spec1 --ci-build-id 9 --parallel && npm run cy:second -- --group Spec2 --ci-build-id 8 --parallel"
   },
   "author": "Konstantin K.",
   "license": "ISC",
